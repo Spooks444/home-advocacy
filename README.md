@@ -6,17 +6,10 @@ Professional repository for Home Advocacy workflows, documentation, and approved
 This repository contains Home Advocacy content only. General-purpose tooling and unrelated business logic are kept in separate repositories.
 
 ## Security
-- Protected Health Information (PHI) and electronic PHI (ePHI) are not permitted in commits.
-- Secrets and credentials must never be committed.
-- All contributions must comply with applicable privacy and security requirements.
+This repo must meet the highest practical security standards for client data exposure.
 
-## Getting Started
-1. Review the approved pathways under `pathways/`
-2. Read the onboarding documentation in `docs/`
-3. Submit changes through pull requests for review
-
-## Contribution Workflow
-1. Fork this repository
-2. Create a feature branch
-3. Open a pull request with a completed checklist
-4. Await review and approval from a code owner
+- **Do not commit Protected Health Information (PHI) or electronic PHI (ePHI).**
+- **Do not commit secrets, credentials, tokens, keys, or configuration that grants access to systems storing client data.**
+- All contributions must comply with HIPAA, the Privacy Rule, the Security Rule, and applicable state and contract requirements.
+- Transportation, storage, processing, logging, and reporting of client data belong only in systems explicitly approved for that purpose.
+- If you suspect unencrypted or sensitive client data has been exposed in code, docs, history, or artifacts, treat it as an incident: stop, report it, and do not attempt remediation alone.
