@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConsentRecord",
+  "type": "object",
+  "required": ["profileId", "purpose", "granted", "timestamp"],
+  "properties": {
+    "profileId": { "type": "string", "minLength": 8, "maxLength": 64 },
+    "purpose": { "type": "string", "enum": ["messaging", "sync", "resource_access", "assessment", "data_retention", "marketing"] },
+    "granted": { "type": "boolean" },
+    "scope": { "type": "string", "enum": ["local", "encrypted_cloud", "participants_only", "support_staff"] },
+    "retentionDays": { "type": ["integer", "null"], "minimum": 1, "maximum": 3650 },
+    "metadata": { "type": ["object", "null"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "revokedAt": { "type": ["string", "null"], "format": "date-time" }
+  },
+  "additionalProperties": false
+}
