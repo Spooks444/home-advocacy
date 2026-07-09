@@ -1,0 +1,6 @@
+# CODEOWNERS for home-advocacy
+#
+# Only phant may approve/review changes.
+# External contributors can open PRs but cannot merge without approval.
+
+* @Spooks444
