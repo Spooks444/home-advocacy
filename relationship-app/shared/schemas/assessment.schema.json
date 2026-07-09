@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Assessment",
+  "type": "object",
+  "required": ["type", "responses"],
+  "properties": {
+    "type": { "type": "string" },
+    "responses": { "type": "object" },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
