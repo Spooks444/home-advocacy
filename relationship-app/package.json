@@ -9,5 +9,8 @@
     "server:install": "cd server && npm install",
     "server:start": "cd server && npm start",
     "test": "cd server && npm test"
+  },
+  "dependencies": {
+    "mocha": "^11.7.6"
   }
 }
