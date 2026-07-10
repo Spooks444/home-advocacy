@@ -1,16 +1,29 @@
 # Messages API
 
 ## POST /api/relationship/messages
-Creates a message object.
+Create a message.
 
-Request body:
-- threadId: string
-- sender: string
-- body: string
+### Request
+- `threadId`: string, required
+- `sender`: string, required
+- `body`: string, required, max 5000 chars
+
+### Response 201
+- `id`: string
+- `threadId`: string
+- `sender`: string, redacted if sensitive
+- `body`: string
+
+### Errors
+- `400 INVALID_THREAD`
+- `400 INVALID_BODY`
+- `401 NOT_AUTHENTICATED`
 
 ## GET /api/relationship/messages/thread/:threadId
-Lists messages for a thread.
+List messages for a thread.
 
-## Safety
-- Do not return raw identifiers in responses.
-- Do not log message bodies unless explicitly required and consented.
+### Response 200
+Array of message objects.
+
+### Errors
+- `401 NOT_AUTHENTICATED`
