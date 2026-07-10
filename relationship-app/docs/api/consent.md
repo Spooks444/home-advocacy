@@ -1,22 +1,30 @@
 # Consent API
 
 ## POST /api/relationship/consent
-Record explicit user consent.
+Create a consent record.
 
-Required:
-- profileId
-- purpose
-- granted
+### Request
+- `profileId`: string, required, min 8 chars
+- `purpose`: string, required
+- `granted`: boolean, required
+- `scope`: string, optional
+- `retentionDays`: number, optional
+- `metadata`: object, optional; secrets are redacted
 
-Optional:
-- scope
-- retentionDays
-- metadata
+### Response 201
+Consent object with redacted sensitive fields.
+
+### Errors
+- `400 INVALID_PROFILE_ID`
+- `400 INVALID_PURPOSE`
+- `400 INVALID_GRANTED`
+- `401 NOT_AUTHENTICATED`
 
 ## POST /api/relationship/consent/:id/revoke
 Revoke a prior consent record.
 
-## Safety
-- Never store secrets in metadata
-- Keep retention within policy limits
-- Prefer local-only scope unless encrypted sync is explicitly enabled
+### Response 200
+Updated consent object.
+
+### Errors
+- `401 NOT_AUTHENTICATED`
