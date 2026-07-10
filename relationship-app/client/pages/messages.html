@@ -1,22 +1,9 @@
 <div class="card">
   <h2>Messages</h2>
-  <p>Secure message thread placeholder. Messages must never include raw identifiers or sensitive credentials.</p>
+  <p>Secure message thread. Messages must never include raw identifiers or sensitive credentials.</p>
   <div id="message-thread" style="margin-top:12px;"></div>
   <form id="message-form" style="margin-top:16px; display:flex; gap:8px;">
     <input id="message-input" class="input" placeholder="Type a message..." autocomplete="off" />
     <button class="btn" type="submit">Send</button>
   </form>
 </div>
-<script>
-document.getElementById('message-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const input = document.getElementById('message-input');
-  const thread = document.getElementById('message-thread');
-  const item = document.createElement('div');
-  item.className = 'card';
-  item.style.marginTop = '8px';
-  item.textContent = input.value.trim() || '(empty)';
-  thread.appendChild(item);
-  input.value = '';
-});
-</script>
