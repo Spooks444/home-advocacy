@@ -1,0 +1,13 @@
+{
+  "name": "relationship-app",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "server"
+  ],
+  "scripts": {
+    "server:install": "cd server && npm install",
+    "server:start": "cd server && npm start",
+    "test": "cd server && npm test"
+  }
+}
