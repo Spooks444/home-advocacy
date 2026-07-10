@@ -1,6 +1,6 @@
 // Relationship App Auth Middleware
-// Placeholder: verify household profile membership and mTLS/cert where applicable.
-// Never reveal whether a profile exists; return generic NOT_AUTHENTICATED on failure.
+// Requires household middleware first.
 module.exports = (req, res, next) => {
+  if (!req.profileId) return res.status(401).json({ error: 'NOT_AUTHENTICATED' });
   next();
 };
